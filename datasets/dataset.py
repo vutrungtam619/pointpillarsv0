@@ -45,7 +45,7 @@ class Kitti(Dataset):
                 db_sample[cat_name] = BaseSampler(db_infos[cat_name], shuffle=True)
             
             self.data_aug_config = {
-                'database_sampled': {'db_sample': db_sample, 'sample_groups': {'Car': 10, 'Pedestrian': 15, 'Cyclist': 10},},
+                'database_sampled': {'db_sample': db_sample, 'sample_groups': {'Car': 10, 'Pedestrian': 15, 'Cyclist': 15},},
                 'object_noise': {'num_try': 100, 'translation_std': [0.25, 0.25, 0.25], 'rot_range': [-0.15707963267, 0.15707963267]},
                 'global_rot_scale_trans': {'rot_range': [-0.78539816, 0.78539816], 'scale_ratio_range': [0.95, 1.05], 'translation_std': [0, 0, 0]},
                 'point_range_filter': config['point_cloud_range'],
