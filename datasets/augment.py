@@ -101,9 +101,7 @@ def points_shuffle(data_dict):
     
     return data_dict
           
-def train_data_aug(data_dict, data_aug_config):
-    database_sampled = data_aug_config['database_sampled']
-    
+def train_data_aug(data_dict, data_aug_config):    
     global_rot_scale_trans_cfg = data_aug_config['global_rot_scale_trans']
     data_dict = global_rot_scale_trans(
         data_dict=data_dict,
