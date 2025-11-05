@@ -1,0 +1,12 @@
+__pycache__/
+.vscode/
+build/
+images/
+*.egg-info/
+packages/*.pyd
+KITTICrowd/
+logs/
+datasets/*.pkl
+datasets/point_cloud_reduced/
+datasets/train_gt_database/
+results/
