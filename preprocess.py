@@ -140,11 +140,14 @@ def create_data_info_pkl(data_root, data_type, label):
 
     index_files = Path(root) / 'index' / f'{data_type}.txt'
     ids = index_files.read_text(encoding="utf-8").splitlines()
-    split = 'training' if label else 'testing'
+    if data_type == 'train':
+        split = 'training'
+    else:
+        split = 'validating'
 
     lidar_reduced_folder = Path(root) / 'datasets' / 'point_cloud_reduced' 
     lidar_reduced_folder.mkdir(exist_ok=True)
-    lidar_reduced_folder = Path(lidar_reduced_folder) / f'{data_type}'
+    lidar_reduced_folder = Path(lidar_reduced_folder) / f'{split}'
     lidar_reduced_folder.mkdir(exist_ok=True)
     
     infos_dict = {}
