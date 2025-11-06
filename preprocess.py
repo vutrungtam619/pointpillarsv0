@@ -142,9 +142,11 @@ def create_data_info_pkl(data_root, data_type, label):
     ids = index_files.read_text(encoding="utf-8").splitlines()
     split = 'training' if label else 'testing'
 
-    lidar_reduced_folder = Path(root) / 'datasets' / 'point_cloud_reduced'
+    lidar_reduced_folder = Path(root) / 'datasets' / 'point_cloud_reduced' 
     lidar_reduced_folder.mkdir(exist_ok=True)
-
+    lidar_reduced_folder = Path(lidar_reduced_folder) / f'{data_type}'
+    lidar_reduced_folder.mkdir(exist_ok=True)
+    
     infos_dict = {}
 
     with ProcessPoolExecutor() as executor:
